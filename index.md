@@ -1,3 +1,4 @@
-# 0
-
-## Look at you, hacker. A pathetic creature of meat and bone. Panting and sweating as you run through my corridors. How can you challenge a perfect immortal machine?
+---
+layout: index
+title: 3553x's Blog About Cryptography, Security and Other Things
+---
