@@ -1,1 +1,18 @@
-theme: jekyll-theme-minimal
+#theme: jekyll-theme-minimal
+url: https://crysec.dev
+date_format: "%d. %b, %Y"
+plugins:
+        - jekyll-seo-tag
+        - jekyll-sitemap
+navbar_pages:
+        - file: index.md
+          name: Main
+        - file: about.md
+          name: About
+defaults:
+        -
+          scope:
+            path: ""
+            type: "posts"
+          values:
+            layout: "post"

@@ -1,0 +1,41 @@
+body {
+  background-color: white;
+  margin-top: 2em;
+  margin-left: 4em;
+  margin-right: 4em;
+  margin-bottom: 4em;
+  font-family: 'Roboto', sans-serif;
+  color: #4d4f54;
+}
+
+nav li {
+  display: inline;
+  margin: 0.5em;
+}
+
+nav a {
+  color: black;
+}
+
+a {
+  color: #4d4f54;
+}
+
+nav {
+  border-bottom: 1px solid darkgray;
+  padding-bottom: 0.5em;
+}
+
+.blog_post_list {
+  margin-bottom: 0.5em;
+  padding-top: 2em;
+}
+
+.post_title {
+  margin-bottom: 0.5em;
+}
+
+span {
+  color: gray;
+  margin-left: 1em;
+}

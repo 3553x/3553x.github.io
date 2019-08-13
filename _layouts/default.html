@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    {% seo %}
+  </head>
+  <body>
+      <nav>
+      	<ul>
+        {% for entry in site.navbar_pages %}
+	  {%- assign p = site.pages | where: "name", entry.file | first -%}
+	  <li>
+	    <a href="{{ p.url }}">{{ entry.name }}</a>
+	  </li>
+	{%- endfor -%}
+	</ul>  
+      </nav>
+    {{ content }}
+  </body>
+</html>
