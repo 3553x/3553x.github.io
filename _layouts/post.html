@@ -2,14 +2,14 @@
 layout: default
 ---
 
-<article itemscope itemtype="http://schema.org/BlogPosting">
+<article>
   <header>
-    <h1 class="post_title" itemprop="name headline">{{ page.title }}</h1>
+    <h1 class="post_title">{{ page.title }}</h1>
     {%- if page.date -%}
-    <span itemprop="datePublished">Last updated: {{ page.date | date: site.date_format }}</span>
+    <span>Last updated: {{ page.date | date: site.date_format }}</span>
     {%- endif -%}
   </header>
-  <main itemprop="articleBody">
+  <main>
   {{ content }}
   </main>
 </article>
