@@ -1,6 +1,11 @@
 #theme: jekyll-theme-minimal
 url: https://crysec.dev
+title: crysec.dev
 date_format: "%d. %b, %Y"
+description: 3553x's blog dedicated to Cryptology, Cybersecurity and other things.
+twitter:
+        username: APT58
+        card: summary
 plugins:
         - jekyll-seo-tag
         - jekyll-sitemap
