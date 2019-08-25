@@ -58,6 +58,7 @@ main, div {
 }
 img {
   height: 20em;
+  max-width: 100%;
   border-style: solid;
   border-color: darkgray;
   border-width: 1px;
