@@ -1,8 +1,8 @@
 body {
   background-color: white;
   margin-top: 2em;
-  margin-left: 4em;
-  margin-right: 4em;
+  margin-left: 2em;
+  margin-right: 2em;
   margin-bottom: 4em;
   font-family: 'Roboto', sans-serif;
   color: #4d4f54;
@@ -57,7 +57,7 @@ main, div {
   overflow: auto;
 }
 img {
-  height: 20em;
+  max-height: 20em;
   max-width: 100%;
   border-style: solid;
   border-color: darkgray;
