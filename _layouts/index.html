@@ -8,8 +8,10 @@ layout: default
 <main>
   {%- for post in site.posts -%}
     <h3 class="blog_post_list"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    <span> {{ post.date | date: site.date_format }} </span>
+    <div class="date"> {{ post.date | date: site.date_format }} </div>
+    <div>
     {{ post.excerpt }}
+    </div>
 
    {%- endfor -%}
     
