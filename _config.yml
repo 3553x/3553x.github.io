@@ -9,6 +9,7 @@ twitter:
 plugins:
         - jekyll-seo-tag
         - jekyll-sitemap
+        - jekyll-feed
 navbar_pages:
         - file: index.md
           name: Main
