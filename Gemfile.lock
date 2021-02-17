@@ -218,9 +218,7 @@ GEM
     minitest (5.14.2)
     multi_json (1.15.0)
     multipart-post (2.1.1)
-=======
     nokogiri (1.10.10)
->>>>>>> e5a7023 (Updage Gemfile)
       mini_portile2 (~> 2.4.0)
     octokit (4.19.0)
       faraday (>= 0.9)
@@ -228,9 +226,7 @@ GEM
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (3.1.1)
-=======
     rack (1.6.13)
->>>>>>> e5a7023 (Updage Gemfile)
     rack-protection (1.5.5)
       rack
     rack-test (1.1.0)
@@ -242,10 +238,8 @@ GEM
     rouge (3.23.0)
     ruby-enum (0.8.0)
       i18n
-=======
     ruby2_keywords (0.0.2)
     rubyzip (2.3.0)
->>>>>>> e5a7023 (Updage Gemfile)
     safe_yaml (1.0.5)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
