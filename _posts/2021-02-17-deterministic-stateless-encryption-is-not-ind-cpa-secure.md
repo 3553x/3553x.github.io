@@ -37,8 +37,7 @@ Hence the name: ciphertext indistinguishability.
 The adversary is given access to the encryption oracle.
 However, he may merely specify the two arguments \\(M_0\\) and \\(M_1\\), which have to be of the same length.
 He can not modify \\(b\\) and is (unless he is able to recover it from the ciphertexts with a successful attack) unaware of the value of \\(b\\) that is passed to the oracle.
-\\(A\\) is also limited to a polynomial running time and the size of the code is added to the running time.
-Adding the code is required to prevent attacks that use very expensive precomputations. For example, an attack could use a gigantic table of precomputed key, ciphertext pairs.
+\\(A\\) is also limited to a polynomial running time.
 The adversary may guess of course, in which case he is going to be correct in about half of all cases.
 The advantage is therefore defined to be:
 
