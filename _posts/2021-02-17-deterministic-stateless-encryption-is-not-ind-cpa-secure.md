@@ -80,8 +80,8 @@ The encryption oracle in CCA is also unconstrained.
 ## Stateful and Probabilistic Encryption
 
 Stateful and probabilistic encryption schemes can avoid this issue since the same message can yield multiple different ciphertexts.
-One example for a stateful scheme would be AES-CBC, an initialisation vector is used to initialise the state and the state is updated after every encryption.
-The previously described attack would therefore not work.
+One example for a stateful scheme would be one time pad, a counter is used to keep track of the number of encrypted bytes and is preserved between different calls to the encryption oracle.
+The previously described attack would not work.
 
 An example for probabilistic encryption is padded RSA (see the RFC in the references for an example).
 The message to be encrypted is prepended with a combination of random and fixed bytes, which are of course stripped after the decryption.
