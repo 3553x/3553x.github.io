@@ -73,8 +73,9 @@ $$
 The LR oracle from the previous definition is still accessed once.
 It's easy to see that our attack still works.
 
-Students sometimes mistakenly believe that an adversary is constrained in what he can send to the oracle.
-These constraints exist in the CCA setting, but are absent in CPA.
+Students sometimes mistakenly believe that an adversary is constrained in what he can send to the encryption oracle.
+These constraints exist for the decryption oracle in the CCA setting, but are absent in CPA.
+The encryption oracle in CCA is also unconstrained.
 
 ## Stateful and Probabilistic Encryption
 
