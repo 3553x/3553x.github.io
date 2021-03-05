@@ -20,7 +20,7 @@ $$
 \begin{split}
 Experiment\ & Exp_{\mathcal{SE}}^{ind-cpa}(A) \\
 	& b \leftarrow^$ \{0, 1\} \\
-	& K \leftarrow^$ K \\
+	& k \leftarrow^$ K \\
 	& b' \leftarrow^$ A^{E_k(LR(\cdot,\cdot,b))} \\
 	& \text{if}\ b = b'\ \text{return}\ 1\ \text{else return}\ 0\\
 \\
@@ -42,10 +42,8 @@ The adversary may guess of course, in which case he is going to be correct in ab
 The advantage is therefore defined to be:
 
 $$
-Adv_{\mathcal{SE}}^{ind-cpa}(A) = | 2  Pr[Exp_{\mathcal{SE}}^{ind-cpa}(A) = 1] - 1 |
+Adv_{\mathcal{SE}}^{ind-cpa}(A) = 2  Pr[Exp_{\mathcal{SE}}^{ind-cpa}(A) = 1] - 1
 $$
-
-This slightly unintuitive definition stems from the fact that an attacker which never guesses correctly is also capable of distinguishing the messages (just invert \\(b'\\)).
 
 The advantage of the adversary is modelled as a function with the security parameter \\(n\\) as input.
 If this function is non-negligible (i.e. its inverse is bounded by a polynomial), then we have an attack with a non-negligible advantage:
@@ -63,7 +61,7 @@ This attack succeeds with an advantage of 1.
 Concrete schemes against which this attack works are AES-ECB and textbook RSA.
 
 Some of you might have encountered a different game definition for IND-CPA.
-In this definition, the adversary is given to an oracle which merely encrypts a single message and does not have \\(b\\) as a parameter:
+In this definition, the adversary is given access to a different oracle which merely accepts a single message per call and does not have \\(b\\) as a parameter:
 
 $$
 Oracle\ E_k(M) \\
@@ -73,14 +71,19 @@ $$
 The LR oracle from the previous definition is still accessed once.
 It's easy to see that our attack still works.
 
-Students sometimes mistakenly believe that an adversary is constrained in what he can send to the encryption oracle.
-These constraints exist for the decryption oracle in the CCA setting, but are absent in CPA.
-The encryption oracle in CCA is also unconstrained.
+Students sometimes mistakenly believe that an adversary is limited in what he can send to the encryption oracle.
+Precisely, assume that we are using the oracle without \\(b\\) as a parameter: students commonly assume that a message, which has been sent to the oracle previously can not be sent as a challenge plaintext to the LR oracle.
+This is incorrect.
+That limitation exists for the decryption oracle in the CCA (chosen ciphertext attack) setting, but is absent in CPA.
+The encryption oracle in CCA also faces no such limits.
 
 ## Stateful and Probabilistic Encryption
 
 Stateful and probabilistic encryption schemes can avoid this issue since the same message can yield multiple different ciphertexts.
-One example for a stateful scheme would be one time pad, a counter is used to keep track of the number of encrypted bytes and is preserved between different calls to the encryption oracle.
+One example for a stateful scheme would be one time pad.
+The scheme is initialised with a key and afterwards a counter is used to keep track of the number of key bytes that have been used for encryption.
+This number is preserved between different calls to the encryption oracle.
+\\(E_k\\) then refuses to encrypt further plaintexts once all of the key bytes have been used up.
 The previously described attack would not work.
 
 An example for probabilistic encryption is padded RSA (see the RFC in the references for an example).
