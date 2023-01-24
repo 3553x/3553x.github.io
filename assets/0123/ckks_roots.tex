@@ -1,0 +1,19 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\begin{document}
+\begin{tikzpicture}
+\node[circle,draw,minimum size=10cm] (a) at (0,0) {};
+\node[below right] at (0,0) {0};
+\foreach \i [count=\j] in {1, 3, 5, 7} {
+    \draw ({-\i * 360 / 8} :5) -- ({-\i * 360 / 8}:5.3);
+    \draw ({-\i * 360 / 8}:5.7) node[font=\large] {$\zeta(8)^\i$};
+}
+
+\draw[->,thick] (-6,0)--(6,0) node[right]{$Re$};
+\draw[->,thick] (0,-6)--(0,6) node[above]{$Im$};
+
+\end{tikzpicture}
+
+
+\end{document}
