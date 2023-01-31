@@ -27,7 +27,7 @@ We will denote this as $F/E$.
 
 If every element of $F$ is the root of a non-zero polynomial with coefficients in $E$, then such a field extension is known as **algebraic**.
 
-An **automorphishm** of $F/E$ is an isomorphism $f: F \rightarrow F$ such that $f(x) = x$ for all $x \in E$.
+An **automorphism** of $F/E$ is an isomorphism $f: F \rightarrow F$ such that $f(x) = x$ for all $x \in E$.
 $Aut(F/E)$ denotes the group of automorphisms of $F/E$ with the group operation being composition.
 
 If $\\{x \in F | f(x) = x, \forall f \in Aut(F/E) \\} = E$ and $F/E$ is algebraic, then $Aut(F/E)$ is the **Galois group** of $F/E$.
