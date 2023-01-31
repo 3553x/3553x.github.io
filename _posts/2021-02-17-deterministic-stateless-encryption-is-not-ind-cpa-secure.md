@@ -2,6 +2,7 @@
 layout: post
 title: IND-CPA Security & Deterministic Stateless Encryption
 date: 2021-02-17 18:47 +0100
+list: true
 ---
 Encryption algorithms which for a given key always map the same message to the same ciphertext (i.e. deterministic, stateless algorithms) are not IND-CPA secure.
 This is typically taught in introductory level courses on cryptography, however I noticed that some students seem to be confused about this and every now and then a question about this pops up on online discussion forums.

@@ -3,6 +3,7 @@ layout: post
 title: Breaking AES128 with Multi-Bit DPA
 date: 2019-08-25 21:17 +0200
 image: /assets/0819/xor_vs_wait.jpg
+list: true
 ---
 <video autoplay="true" muted="true" loop="true">
   <source src="/assets/0819/scope_dpa.mp4" type="video/mp4">

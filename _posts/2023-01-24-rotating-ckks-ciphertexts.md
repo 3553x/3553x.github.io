@@ -2,6 +2,7 @@
 layout: post
 title: Rotating CKKS Ciphertexts
 date: 2023-01-24 23:50 +0100
+list: false
 ---
 This post explains how ciphertext slots can be rotated in the CKKS FHE cryptosystem.
 Upon spending some time with the FHE community, I noticed that some people asked for explanations on how ciphertext rotations work in the CKKS cryptosystem.
