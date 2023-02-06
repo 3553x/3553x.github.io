@@ -4,9 +4,18 @@ title: Rotating CKKS Ciphertexts
 date: 2023-01-24 23:50 +0100
 list: false
 ---
-This post explains how ciphertext slots can be rotated in the CKKS FHE cryptosystem.
-Upon spending some time with the FHE community, I noticed that some people asked for explanations on how ciphertext rotations work in the CKKS cryptosystem.
-The purpose of this post is to provide the reader with an intuitive and practical understanding of CKKS ciphertext rotation as well as an understanding of the terminology to comprehend the literature.
+FHE systems allow for computations to be evaluated on encrypted ciphertexts.
+Some of these systems support batching, i.e. the packing of multiple plaintext values into a single ciphertext.
+One example for such as scheme is CKKS.
+This post explains how a vector of plaintext values can be homomorphically rotated in the CKKS FHE cryptosystem.
+
+Upon spending some time with the FHE community, I noticed that some people asked for explanations on rotations in systems such as CKKS.
+People also asked for resources that explained this topic.
+However, it seems that there are few resources that explain this topic aside of academic publications.
+
+This post aims to explain CKKS rotations in a more easily digestible manner.
+It also defines some terms that play an important role in the literature.
+The targeted audience of this post are people who already have some familiarity with CKKS, but struggle to understand its slot rotation.
 
 {% raw %}
 $$
@@ -66,14 +75,18 @@ The x axis corresponds to the real part and the y axis to the imaginary part of 
 
 ![Euler's formula depicted graphically.](/assets/0123/eulers_formula.svg)
 
-The $M/2$ roots can be grouped into pairs $(\z(M)^k, \z(M)^{M-k})$ such that $\z(M)^k = \overline{\z(M)^{M-k}}$.
+The $M/2$ roots can be grouped into pairs $(\z(M)^k, \z(M)^{M-k})$.
+For these pairs, it is the case that $\z(M)^k = \overline{\z(M)^{M-k}}$.
 On the unit circle, this corresponds to mirroring a root along the x axis.
 
 ![Depiction of the roots of the 8th cyclotomic polynomial on a unity circle.](/assets/0123/ckks_roots.svg)
 
-We use a projection so that we only retain the complex number of one root of each pair since the other number will simply be its conjugate and can thus not be freely chosen during the encoding.
-Let $T$ be a subgroup of the multiplicative group $\Z^{\*}_M$ such that $\Z^{\*}_M / T = \\{-1, 1\\}$, then T contains the indices that are preserved by the projection.
+We use a projection so that we only retain the complex number of one root of each pair.
+Retaining both elements would result in redundant information, since one complex number will be the conjugate of the other and can thus not be freely chosen.
+Let $T$ be a subgroup of the multiplicative group $\Z^{\*}_M$ such that $\Z^{\*}_M / T = \\{-1, 1\\}$, then $T$ contains the indices that are preserved by the projection.
 This results in $M/4$ complex numbers which form the decoded message.
+
+When implementing CKKS, we may of course only evaluate the message at the roots whose indices corresponds to $T$, rather than evaluating it at all roots and then discarding some of the results.
 
 Encoding performs the inverse of this operation, the only major difference is that rounding is required to map the polynomial coefficients to integers.
 
@@ -113,6 +126,8 @@ Wikipedia on Galois groups: <https://en.wikipedia.org/wiki/Galois_group>
 Ben Lynn's notes on number theory: <https://crypto.stanford.edu/pbc/notes/numbertheory/gengen.html>
 
 Original CKKS paper: <https://link.springer.com/chapter/10.1007/978-3-319-70694-8_15>
+
+FHE with Polylog Overhead, provides more information about the maths behind rotations: <https://eprint.iacr.org/2011/566.pdf>
 
 Microsoft SEAL: <https://github.com/microsoft/SEAL>
 
