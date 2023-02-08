@@ -2,7 +2,7 @@
 layout: post
 title: Rotating CKKS Ciphertexts
 date: 2023-01-24 23:50 +0100
-list: false
+list: true
 ---
 FHE systems allow for computations to be evaluated on encrypted ciphertexts.
 Some of these systems support batching, i.e. the packing of multiple plaintext values into a single ciphertext.
